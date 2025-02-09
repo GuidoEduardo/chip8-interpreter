@@ -1,7 +1,5 @@
 mod chip_8;
-mod io_interface;
-
-use wasm_bindgen::prelude::*;
+mod io;
 
 // pub fn add(left: u64, right: u64) -> u64 {
 //     left + right
