@@ -1,5 +1,5 @@
-mod cpu;
-mod platform;
+mod chip_8;
+mod io_interface;
 
 use wasm_bindgen::prelude::*;
 
