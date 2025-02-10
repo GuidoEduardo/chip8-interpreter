@@ -306,14 +306,14 @@ impl Chip8 {
             for col in 0..8 {
                 let sprite_pixel = sprite_byte & (0x80 >> col);
 
-                let mut screen_pixel = self.display[(y_position + row as usize) * WIDTH + (x_position + col)];
+                let screen_pixel = &mut self.display[(y_position + row as usize) * WIDTH + (x_position + col)];
 
                 if sprite_pixel != 0 {
-                    if screen_pixel == 0xFFFFFFFF {
+                    if *screen_pixel == 0xFFFFFFFF {
                         self.regs[0xF] = 1;
                     }
 
-                    screen_pixel ^= 0xFFFFFFFF;
+                    *screen_pixel ^= 0xFFFFFFFF;
                 }
             }
         }
